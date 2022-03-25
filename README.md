@@ -8,7 +8,7 @@ For example: turns "Family.Guy.S20E01.AZMN.WEB-DL.x264.mkv" into "S20E01"
 
 Requires C++17 or above. Compiles on Windows, Linux, and (not tested) macOS.
 
-Unix/MinGW example: ```g++ -std=c++17 main.cpp -o mfo```
+Unix/MinGW example: ```g++ -std=c++17 -static-libgcc -static-libstdc++ main.cpp -o mfo```
 
 Windows example: ```cl /EHsc /std:c++17 /MT /Fe:mfo main.cpp```
 
