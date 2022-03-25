@@ -10,7 +10,7 @@ Requires C++17 or above. Compiles on Windows, Linux, and (not tested) macOS.
 
 Unix/MinGW example: ```g++ -std=c++17 main.cpp -o mfo```
 
-Windows example: ```cl /std:c++17 /MT /Fi mfo main.cpp```
+Windows example: ```cl /EHsc /std:c++17 /MT /Fe:mfo main.cpp```
 
 # Usage
 
