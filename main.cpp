@@ -1,9 +1,4 @@
-#include <cstdio>
-#include <cstdlib>
-#include <string>
-#include <vector>
 #include <filesystem>
-#include <cstdint>
 #include <regex>
 
 std::vector<std::string> extensions = { ".avi", ".mkv", ".mp4", ".flv", ".webm", ".mov", ".wmv", ".mp4", ".m4v", ".mpeg" };
