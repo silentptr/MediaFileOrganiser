@@ -1,5 +1,6 @@
 #include <filesystem>
 #include <regex>
+#include <algorithm>
 
 std::vector<std::string> extensions = { ".avi", ".mkv", ".mp4", ".flv", ".webm", ".mov", ".wmv", ".mp4", ".m4v", ".mpeg" };
 std::basic_regex reg("S\\d{1,2}E\\d{1,2}", std::regex::icase | std::regex::optimize);
@@ -38,7 +39,10 @@ void CheckDir(const std::string& path)
                 if (std::regex_search(filename, match, reg) && match.size() == 1)
                 {
                     std::filesystem::path newFilename = p;
-                    newFilename.replace_filename(match[0].str() + extension);
+                    std::string matchString = match[0].str();
+                    std::string result = matchString;
+                    std::transform(matchString.begin(), matchString.end(), result.begin(), ::toupper);
+                    newFilename.replace_filename(result + extension);
 
                     std::filesystem::rename(p, newFilename);
                     std::printf("Renamed \"%s\" to \"%s\".\n", filename.c_str(), newFilename.filename().string().c_str());
